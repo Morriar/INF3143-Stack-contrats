@@ -90,6 +90,7 @@ public class Stack<E> {
     /**
      * Remove the element onto the top of the Stack.
      */
+    @Ensures("size() == old(size()) - 1")
     public void remove() {
         internalList.removeFirst();
     }
