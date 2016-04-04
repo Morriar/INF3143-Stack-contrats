@@ -55,7 +55,9 @@ public class Stack<E> {
     }
 
     public E pop() {
-        return internalList.removeFirst();
+        E e = peek();
+        remove();
+        return e;
     }
 
     /**
