@@ -64,7 +64,10 @@ public class Stack<E> {
      *
      * @param e element to push
      */
-    @Ensures("e == peek()")
+    @Ensures({
+        "e == peek()", // pushed element on top
+        "size() == old(size()) + 1" // size increased
+    })
     public void push(E e) {
         internalList.addFirst(e);
     }
