@@ -49,7 +49,7 @@ public class Stack<E> {
      *
      * @param e element to push
      */
-    @Ensures("e == pop()")
+    @Ensures("e == peek()")
     public void push(E e) {
         internalList.addFirst(e);
     }
