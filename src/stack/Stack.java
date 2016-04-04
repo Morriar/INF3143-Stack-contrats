@@ -17,6 +17,8 @@ package stack;
 
 import java.util.LinkedList;
 
+import com.google.java.contract.Ensures;
+
 public class Stack<E> {
 
     private LinkedList<E> internalList;
@@ -33,6 +35,12 @@ public class Stack<E> {
         return internalList.isEmpty();
     }
 
+    /**
+     * Push `e` onto the top of the stack.
+     *
+     * @param e element to push
+     */
+    @Ensures("e == pop()")
     public void push(E e) {
         internalList.addFirst(e);
     }
