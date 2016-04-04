@@ -36,6 +36,15 @@ public class Stack<E> {
     }
 
     /**
+     * Look at the element on the top of the stack without removing it.
+     *
+     * @return element onto the top of the stack
+     */
+    public E peek() {
+        return internalList.getFirst();
+    }
+
+    /**
      * Push `e` onto the top of the stack.
      *
      * @param e element to push
