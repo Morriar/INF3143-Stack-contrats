@@ -72,6 +72,15 @@ public class Stack<E> {
         internalList.addFirst(e);
     }
 
+    /**
+     * Pop the element onto the top of the Stack and return it.
+     *
+     * @return element onto the top of the stack
+     */
+    @Ensures({
+        "result == old(peek())", // return element onto the top
+        "size() == old(size()) - 1" // size decreased
+    })
     public E pop() {
         E e = peek();
         remove();
