@@ -23,6 +23,10 @@ public class Stack<E> {
 
     private LinkedList<E> internalList;
 
+    /**
+     * Initialize the stack to be empty.
+     */
+    @Ensures("size() == 0")
     public Stack() {
         internalList = new LinkedList<>();
     }
