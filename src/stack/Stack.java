@@ -27,10 +27,21 @@ public class Stack<E> {
         internalList = new LinkedList<>();
     }
 
+    /**
+     * The number of elements in the Stack.
+     *
+     * @return the size of the stack
+     */
     public int size() {
         return internalList.size();
     }
 
+    /**
+     * Is the stack empty?
+     *
+     * @return true if the stack is empty
+     */
+    @Ensures("result == (size() == 0)")
     public boolean isEmpty() {
         return internalList.isEmpty();
     }
