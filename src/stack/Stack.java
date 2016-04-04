@@ -58,4 +58,11 @@ public class Stack<E> {
         return internalList.removeFirst();
     }
 
+    /**
+     * Remove the element onto the top of the Stack.
+     */
+    public void remove() {
+        internalList.removeFirst();
+    }
+
 }
