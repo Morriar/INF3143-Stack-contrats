@@ -18,6 +18,7 @@ package stack;
 import java.util.LinkedList;
 
 import com.google.java.contract.Ensures;
+import com.google.java.contract.Requires;
 
 public class Stack<E> {
 
@@ -55,6 +56,7 @@ public class Stack<E> {
      *
      * @return element onto the top of the stack
      */
+    @Requires("!isEmpty()")
     public E peek() {
         return internalList.getFirst();
     }
@@ -77,6 +79,7 @@ public class Stack<E> {
      *
      * @return element onto the top of the stack
      */
+    @Requires("!isEmpty()")
     @Ensures({
         "result == old(peek())", // return element onto the top
         "size() == old(size()) - 1" // size decreased
@@ -90,6 +93,7 @@ public class Stack<E> {
     /**
      * Remove the element onto the top of the Stack.
      */
+    @Requires("!isEmpty()")
     @Ensures("size() == old(size()) - 1")
     public void remove() {
         internalList.removeFirst();
