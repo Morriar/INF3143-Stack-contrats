@@ -18,8 +18,15 @@ package stack;
 import java.util.LinkedList;
 
 import com.google.java.contract.Ensures;
+import com.google.java.contract.Invariant;
 import com.google.java.contract.Requires;
 
+/**
+ * A simple Stack implementation based on a linked list.
+ *
+ * @param <E> the formal type of the Stack
+ */
+@Invariant("size() >= 0")
 public class Stack<E> {
 
     private LinkedList<E> internalList;
